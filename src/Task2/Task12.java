@@ -14,6 +14,7 @@ public class Task12 {
     };*/
     private static int[][] matrix = new int[n][n];
     private static Random random = new Random();
+    private static int[] sumLine = new int[n];
 
     protected static void generateMatrix() {
         for (int i = 0; i < n; i++) {
@@ -38,7 +39,8 @@ public class Task12 {
             for (int j = 0; j < n; j++) {
                 sum = sum + matrix[i][j];
             }
-            System.out.println("sum line " + i + " = " + sum);
+            System.out.println("sum line " + (i+1) + " = " + sum);
+            sumLine[i] = sum;
         }
     }
 
@@ -46,5 +48,11 @@ public class Task12 {
         generateMatrix();
         showMatrix();
         sumLineMatrix();
+
+        for (int i = 0; i < sumLine.length; i ++ ) {
+            System.out.println(sumLine[i]);
+
+        }
+
     }
 }
