@@ -27,14 +27,24 @@ public class Task12 {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(" " + matrix[i][j]);
-
             }
             System.out.println();
+        }
+    }
+
+    private static void sumLineMatrix() {
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = 0; j < n; j++) {
+                sum = sum + matrix[i][j];
+            }
+            System.out.println("sum line " + i + " = " + sum);
         }
     }
 
     public static void main(String[] args) {
         generateMatrix();
         showMatrix();
+        sumLineMatrix();
     }
 }
