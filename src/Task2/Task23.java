@@ -14,17 +14,25 @@ public class Task23 {
         System.out.println(Arrays.toString(array));
     }
 
+    private static int minEl(int[] arr, int pos) {
+        int min = arr[pos];
+        for (int i = pos; i < arr.length; i ++) {
+            if(min > arr[i]) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
 
     private static void result() {
 
         int pos = 0;
 
-       for (int i = 0; i < array.length; i ++) {
-           for (int j = pos; j < array.length; j ++) {
-                if(array[j] == array[i]) {
-                    System.out.print(" " + array[i]);
-                    pos = j;
-                }
+       for (int i = pos; i < array.length; i ++) {
+           if(array[i] == minEl(array, pos)) {
+               System.out.print(" " + array[i]);
+               pos = i + 1;
            }
        }
     }
