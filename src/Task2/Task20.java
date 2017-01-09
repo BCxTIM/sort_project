@@ -6,7 +6,7 @@ package Task2;
  */
 public class Task20 {
 
-    private static int[] array = {1, 3, 4, 6, 4, 6, 8, 12};
+    private static int[] array = {1, 3, 4, 6, 4, 6, 7, 12};
 
 
     //Not optimized
@@ -16,7 +16,7 @@ public class Task20 {
             System.out.print(" " + array[0]);
         }
         for (int i = 1; i < array.length - 1; i ++) {
-           if(array[i] + 1 != array[i + 1]) {
+           if(array[i] != array[i + 1] - 1 && array[i] != array[i - 1] + 1) {
                System.out.print(" " + array[i]);
            }
         }
@@ -25,5 +25,15 @@ public class Task20 {
             System.out.print(" " + array[array.length - 1]);
         }
     }
+
+    /*public static void main(String[] args) {
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if(array[i] != array[i + 1] - 1) {
+                System.out.print(" " + array[i]);
+            }
+        }
+
+    }*/
 
 }
