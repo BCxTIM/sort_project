@@ -53,16 +53,30 @@ public class Task21 {
         System.out.println(columns);
         System.out.println(rows);
 
+
         while (line != rows || column != columns) {
-            if(matrix[line][column + 1] == 0) {
+            int k = line;
+            int m = column;
+            System.out.println(k + " " + m);
+
+
+            if (matrix[k][m + 1] == 0) {
                 moveRight(line, column);
-            } else if(matrix[line + 1][column] == 0) {
+            }
+
+            else if (matrix[k + 1][m] == 0) {
                 moveDown(line, column);
-            } else if(matrix[line][column - 1] == 0) {
+            }
+
+            else if (matrix[k][m - 1] == 0) {
                 moveLeft(line, column);
-            } else if(matrix[line - 1][column] == 0) {
+            }
+
+            else if (matrix[k - 1][m] == 0) {
                 moveUp(line, column);
-            } else {
+            }
+
+            else {
                 System.out.println("Из лабиинта невозможно выйти");
             }
         }
