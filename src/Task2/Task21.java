@@ -45,38 +45,39 @@ public class Task21 {
     }
 
 
+    private static boolean checkConditions() {
+        int rowsSize = matrix.length - 1;
+        int columnsSize = matrix[0].length - 1;
+
+        System.out.println(line + " " + column);
+
+        if (line != rowsSize) {
+            if (column != columnsSize) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
 
-        int rows = matrix.length - 1;
-        int columns = matrix[0].length - 1;
-
-        System.out.println(columns);
-        System.out.println(rows);
-
-
-        while (line != rows || column != columns) {
+        while (checkConditions()) {
             int k = line;
             int m = column;
-            System.out.println(k + " " + m);
 
 
             if (matrix[k][m + 1] == 0) {
                 moveRight(line, column);
-            }
-
-            else if (matrix[k + 1][m] == 0) {
+            } else if (matrix[k + 1][m] == 0) {
                 moveDown(line, column);
-            }
-
-            else if (matrix[k][m - 1] == 0) {
+            } else if (matrix[k][m - 1] == 0) {
                 moveLeft(line, column);
-            }
-
-            else if (matrix[k - 1][m] == 0) {
+            } else if (matrix[k - 1][m] == 0) {
                 moveUp(line, column);
-            }
-
-            else {
+            } else {
                 System.out.println("Из лабиинта невозможно выйти");
             }
         }
