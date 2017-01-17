@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09832b68-1fc3-4333-ac4a-6e8624e931f7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task2/Task21.java" afterPath="$PROJECT_DIR$/src/Task2/Task21.java" />
     </list>
     <ignored path="sort_project.iws" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="Task21.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Task2/Task21.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+            <state relative-caret-position="242">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding>
                 <element signature="e#536#537#0" expanded="true" />
                 <element signature="e#577#578#0" expanded="true" />
@@ -922,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Task2/Task21.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        <state relative-caret-position="242">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding>
             <element signature="e#536#537#0" expanded="true" />
             <element signature="e#577#578#0" expanded="true" />

@@ -68,7 +68,6 @@ public class Task21 {
             int k = line;
             int m = column;
 
-
             if (matrix[k][m + 1] == 0) {
                 moveRight(line, column);
             } else if (matrix[k + 1][m] == 0) {
@@ -79,6 +78,7 @@ public class Task21 {
                 moveUp(line, column);
             } else {
                 System.out.println("Из лабиинта невозможно выйти");
+                break;
             }
         }
 
