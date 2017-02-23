@@ -39,4 +39,9 @@ public class Task3InverseArray  {
 
         showArray();
     }
+
+    //TODO вместо end (-i)
+    //TODO найти метод ддля свопа
+
+
 }
