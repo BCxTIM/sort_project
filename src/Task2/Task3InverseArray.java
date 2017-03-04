@@ -27,13 +27,15 @@ public class Task3InverseArray  {
         generateArray(array);
         showArray();
 
-        int end = array.length - 1;
+//        int end = array.length - 1;
 
-        for (int i = 0; i < array.length / 2; i++) {
-            float tmp = array[i];
-            array[i] = array[end];
-            array[end] = tmp;
-            end--;
+        for (int i = 0; i < array.length - i - 1; i++) {
+//            float tmp = array[i];
+//            array[i] = array[end];
+//            array[end] = tmp;
+//            end--;
+            array[i] = array[i] + array[array.length - i - 1] - (array[array.length - i - 1] = array[i]); //оптимизированный метод
+//            end --;
         }
         System.out.println("");
 
