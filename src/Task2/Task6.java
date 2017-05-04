@@ -5,6 +5,7 @@ package Task2;
  * Created by tmoiseev on 12/12/2016.
  */
 public class Task6 {
+    //TODO http://floppyy.ru/2016/05/19/monte-carlo-pi/
 
 
     public static void main(String[] args) {
