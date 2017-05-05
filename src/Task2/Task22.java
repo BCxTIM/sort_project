@@ -12,15 +12,11 @@ public class Task22 {
 
     public static void main(String[] args) {
         Point a = new Point(1, 1);
-        Point b = new Point(4, 1);
-        Point c = new Point(1, 4);
-        Point d = new Point(4, 4);
+        Point b = new Point(1, 5);
+        Point c = new Point(4, 5);
+        Point d = new Point(4, 1);
         Point m = new Point(2, 2);
-//        Point e = new Point(1, 2);
-//        Point f = new Point(1, 6);
-//        Point h = new Point(6, 5);
-//        Point q = new Point(4, 3);
-//        Point m = new Point(3, 5);
+//
 
 
 
