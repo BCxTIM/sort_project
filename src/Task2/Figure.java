@@ -2,7 +2,9 @@ package Task2;
 
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
+
 
 /**
  * Created by tmoiseev on 5/5/2017.
@@ -17,6 +19,10 @@ public class Figure {
 
     public void add(Point point) {
         points.add(point);
+    }
+
+    public void addAll() {
+        points.addAll(inputPoints());
     }
 
 
@@ -77,10 +83,18 @@ public class Figure {
     public void findPerimetr(Figure a) {
         Figure b = contur(a);
 
-        distance(b);
         System.out.println(getPerimiter(b));
     }
 
+    /**
+     * поиск контура,
+     * берутся первый три точки и строится фигура
+     * затем проверяется, если следующая точка внутри фигуры -
+     * то не добавляется в коллекцию
+     * если не внутри фигуры - то добавляется в коллецкцию
+     * @param a
+     * @return
+     */
     public Figure contur(Figure a) {
         Figure b = new Figure();
 
@@ -98,16 +112,38 @@ public class Figure {
 
     public static void main(String[] args) {
         Figure a = new Figure();
-        a.add(new Point(0, 5));
-        a.add(new Point(0, 0));
-        a.add(new Point(5, 5));
-        a.add(new Point(2, 6));
-        a.add(new Point(2, 7));
+
+        System.out.println(inputPoints());
+        a.addAll();
 
         a.findPerimetr(a);
     }
 
+    public static List<Point> inputPoints() {
+        List<Point> points = new ArrayList<>();
+        points.add(new Point(0, 5));
+        points.add(new Point(0, 0));
+        points.add(new Point(5, 5));
+        points.add(new Point(2, 6));
+        points.add(new Point(2, 7));
+        points.add(new Point(3, 2));
+        Collections.sort(points, new Comparator<Point>() {
+            @Override
+            public int compare(Point o1, Point o2) {
+                return Integer.compare((int)o1.getX(), (int)o2.getX()) & Integer.compare((int)o1.getY(), (int)o2.getY()) ;
+            }
+        });
 
+        return points;
+    }
+
+
+
+    /**
+     * измеряется расстояние
+     * @param figure
+     * @return
+     */
     private static int[] distance(Figure figure) {
         int[] length = new int[figure.length()];
 
@@ -125,6 +161,11 @@ public class Figure {
 
     }
 
+    /**
+     * вычисляется периметр фигуры
+     * @param b
+     * @return
+     */
     private static int getPerimiter(Figure b) {
         int[] length = distance(b);
         int perimiter = 0;
