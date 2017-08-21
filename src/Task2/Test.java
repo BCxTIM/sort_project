@@ -28,39 +28,53 @@ public class Test {
 //        showArray();
 
         findFirstPoint();
-//
 
-        for (int i = 0; i < resPoints.size(); i++) {
-            findNextPoint(i);
+        findNextPoint();
+
+        for(int i = 0; i < resPoints.size(); i ++) {
+            System.out.println(resPoints.get(i));
         }
 
 
     }
 
-    public static void findNextPoint(int index) {
+    public static void findNextPoint() {
 
-        for (int i = 0; i < resPoints.size(); i++) {
-            findNextPoint(i);
-        }
 
-        Point start;
-        if (resPoints.size() == 1) {
-            start = new Point(0, 0);
-        } else {
-            start = resPoints.get(index - 1);
-        }
+        for (int index = 0; index < resPoints.size(); index++) {
 
-        int pos = 0;
-        double tmp = findAngle(start, resPoints.get(index), points.get(0));
-        for (int i = 1; i < points.size() ; i ++) {
+            Point start;
+            if (resPoints.size() == 1) {
+                start = new Point(0, 0);
+            } else {
+                start = resPoints.get(index - 1);
+            }
 
-            if(tmp < findAngle(start, resPoints.get(index), points.get(i))) {
-                tmp = findAngle(start, resPoints.get(index), points.get(i));
-                pos = i;
+            int pos = 0;
+            double tmp = findAngle(start, resPoints.get(index), points.get(0));
+            for (int i = 1; i < points.size() ; i ++) {
+
+                if(tmp < findAngle(start, resPoints.get(index), points.get(i))) {
+                    tmp = findAngle(start, resPoints.get(index), points.get(i));
+                    pos = i;
+                }
+
+            }
+
+            //проверка на замкнутость
+            if(resPoints.size() > 1) {
+                if(tmp >= findAngle(start, resPoints.get(index), resPoints.get(0))) {
+                    addPointInResArray(pos);
+                } else {
+                    break;
+                }
+            } else {
+                addPointInResArray(pos);
             }
 
         }
-        addPointInResArray(pos);
+
+
     }
 
     public static double findAngle(Point start, Point middle, Point next) {
