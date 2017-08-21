@@ -114,9 +114,9 @@ public class Figure {
         Figure a = new Figure();
 
         System.out.println(inputPoints());
-        a.addAll();
-
-        a.findPerimetr(a);
+//        a.addAll();
+//
+//        a.findPerimetr(a);
     }
 
     public static List<Point> inputPoints() {
@@ -130,9 +130,10 @@ public class Figure {
         Collections.sort(points, new Comparator<Point>() {
             @Override
             public int compare(Point o1, Point o2) {
-                return Integer.compare((int)o1.getX(), (int)o2.getX()) & Integer.compare((int)o1.getY(), (int)o2.getY()) ;
+                return Integer.compare((int)o1.getY(), (int)o2.getY()) ;
             }
         });
+
 
         return points;
     }
